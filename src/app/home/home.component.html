@@ -1,0 +1,27 @@
+<div class="homebtn" fxLayout="wrap row" fxLayout.xs="column" fxLayoutGap="1%" fxLayoutAlign="center">
+  <a routerLink="/posts" mat-raised-button color="primary">Choose News Source</a>
+</div>
+<div class="loader" *ngIf="!((news.articles)?.length > 0)">
+  <mat-spinner></mat-spinner>
+</div>
+<div class="container" fxLayout="wrap row" fxLayout.xs="column" fxLayoutGap="1%" fxLayoutAlign="center">
+
+  <div *ngFor="let post of news.articles" fxFlex="20%">
+
+    <mat-card class=singleNews>
+      <img mat-card-image src="{{post.urlToImage}}" onError="this.src='/assets/blank.png';">
+      <div class="cardbody">
+        <mat-card-title>{{post.title}}</mat-card-title>
+        <mat-card-content>
+          <p>{{post.description}}</p>
+        </mat-card-content>
+      </div>
+
+      <mat-card-actions align="end">
+        <a href="{{post.url}}" target="_balnk" mat-raised-button color="accent">Read More</a>
+      </mat-card-actions>
+    </mat-card>
+
+  </div>
+
+</div>

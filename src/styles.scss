@@ -1,1 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./assets/styles/material-theme";
+body {
+  margin: 0;
+}
+.loader mat-spinner {
+  margin: 10px auto;
+}
